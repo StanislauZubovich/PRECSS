@@ -17,16 +17,186 @@
 		<img src="pictures/maincover.jpg" alt="">
 		</div></section>
 
+	<section class="slide cover"><div>
+		<h2 style="text-align: center; color: #000;font-size:70px">CSS IS WEAK</h2>
+		<img src="pictures/family_guy_weak_force.jpg" alt="">
+		</div></section>
+
 	<section class="slide"><div>
-		<h2>Каким пользователям мы помогаем?</h2>
+		<h2>Однажды в офисе:</h2>
 		<ul>
-			<li>Незрячие пользователи</li>
-			<li>Слабовидящие пользователи</li>
-			<li>Пользователи с когнитивными расстройствами</li>
-			<li>Пользователи с нарушениями опорно-двигательного аппарата</li>
-			<li>Пользователи с дальтонизмом</li>
+			<li class="next">PM: А давай тут поменяем цвет на кнопке на синий? это же быстро?</li>
+			<li class="next">Dev: Да, тут на полчаса работы</li>
+			<li class="next">Прошло полчаса...</li>
+			<li class="next">PM: Нет, это ужас! А давай ты мне лучше сделай светло синий. И заодно зеленый и оранжевый для сравнения!</li>
+			<li class="next">Dev: ...</li>
 		</ul>
 		</div></section>
+
+	<section class="slide"><div>
+		<h2>CSS Variables?</h2>
+		<ul>
+			<li class="next">IE 7 <span class="next">и IE 8</span> <span class="next">и IE 9</span> <span class="next">и IE 10</span> <span class="next">и IE 11</span></li>
+		</ul>
+		</div></section>
+
+	<section class="slide"><div>
+		<h2>3 CSS Weaknesses?</h2>
+		<ul>
+			<li>Lack of basic functionality &amp; features</li>
+			<li>Hard to maintain</li>
+			<li>Not DRY enough</li>
+		</ul>
+		</div></section>
+
+	<section class="slide"><div>
+		<h2>Working with multiple files</h2>
+		<ul>
+			<li>Having multiple CSS files is essentioa for maintainability and collaboration</li>
+			<li>@import is not good enough</li>
+			<li>We need to build tool for concatenation</li>
+			<li>...but maybe we can do more than just that?</li>
+		</ul>
+		</div></section>
+
+	<section class="slide shout"><div>
+		<h2>This is what preprocessors do!</h2>
+		</div></section>
+
+	<section class="slide"><div>
+		<h2>3 most popular preprocessors</h2>
+		<ul>
+			<li>LESS</li>
+			<li>SASS</li>
+			<li>Stylus</li>
+		</ul>
+		</div></section>
+
+	<section class="slide"><div>
+		<h2>Variables</h2>
+		<pre>
+			<code>$my_blue: #4e6cb0 //SASS</code>
+			<code>@my_blue: #4e6cb0 //LESS</code>
+			<code> my_blue: #4e6cb0 //Stylus</code>
+			<code>h1 {</code>
+			<code>	color:@my_blue</code>
+			<code>}</code>
+		</pre>
+		</div></section>
+
+	<section class="slide"><div>
+		<h2>Variables not just for colors</h2>
+		<pre>
+			<code>@fonts: helvetica, Arial, sans-serif;</code>
+			<code>@images_path: "../img";</code>
+			<code>@font-size: 1.5em;</code>
+			<code>@margin: 20px;</code>
+		</pre>
+		</div></section>
+
+	<section class="slide"><div>
+		<h2>Operations and color functions</h2>
+		<pre>
+			<code>width: 25px * 4 + 100px / 2 - 50px; //=100px</code>
+			<code>color: #990033 + #666666; //=#FF6699</code>
+			<code>@light_blue: lighten(@my_blue, 20%);</code>
+			<code>@fancy_blue: saturnate(@my_blue, 20%);</code>
+		</pre>
+		</div></section>
+
+	<section class="slide"><div>
+		<h2>Mixins</h2>
+		<span>Functions returns value, minxins - CSS </span>
+		<pre>
+			<code>.border-radius(@radius) {</code>
+			<code>  -webkit-border-radius: @radius;</code>
+			<code>     -moz-border-radius: @radius;</code>
+			<code>          border-radius: @radius;</code>
+			<code>}</code>
+			<code>#header { .border-radius(4px); }</code>
+		</pre>
+		</div></section>
+
+	<section class="slide"><div>
+		<h2>Nesting</h2>
+		<pre>
+			<code>.pop {</code>
+			<code>	.pop-btn {</code>
+			<code>	}</code>
+			<code>}</code>
+			<code>//OUTPUT:</code>
+			<code>.pop {}</code>
+			<code>.pop .pop-btn {}</code>
+		</pre>
+		</div></section>
+
+	<section class="slide"><div>
+		<h2>Nesting</h2>
+		<pre>
+			<code>.link {</code>
+			<code>	&amp;:hover {</code>
+			<code>	}</code>
+			<code>}</code>
+			<code>//OUTPUT:</code>
+			<code>.link {}</code>
+			<code>.link:hover {}</code>
+		</pre>
+		</div></section>
+
+	<section class="slide"><div>
+		<h2>import and minification</h2>
+		<p>now works with no performance leak</p>
+		<pre>
+			<code>@import "library"; // library.less</code>
+			<code>@import "typo.css";</code>
+		</pre>
+		</div></section>
+
+	<section class="slide shout"><div>
+		<h2>Miscommunications</h2>
+		</div></section>
+
+	<section class="slide"><div>
+		<h2>i need RUBY or Node on backend</h2>
+		<ul>
+			<li>Sass is written in ruby</li>
+			<li>LESS is written in javascript</li>
+			<li class="next">This does NOT required Ruby or Node on your prod env</li>
+			<li class="next">You need them on you development machine</li>
+		</ul>
+		</div></section>
+
+	<section class="slide"><div>
+		<h2>LESS runs client-side</h2>
+		<ul>
+			<li>LESS can run client-side</li>
+			<li>OK for testing and if you can't access dev env</li>
+			<li class="next">NEVER EVER use it in prod. it's even worce than @import performance</li>
+			<li class="next">Use Node. of Rhino</li>
+		</ul>
+		</div></section>
+
+	<section class="slide"><div>
+		<h2>IT's hard to install</h2>
+		<ul>
+			<li>Both ruby and Node are easy to install on any platform</li>
+			<li class="next">Mac: Ruby from the box, Node.pkg</li>
+			<li class="next">Windows: RubyInstaller.exe, Node.exe</li>
+			<li class="next">unix: apt-get install ruby/nodejs</li>
+		</ul>
+		</div></section>
+		
+	<section class="slide shout"><div>
+		<h2>Even big huys make mistakes</h2>
+		</div></section>
+		
+		
+		
+		
+		
+		
+		
+		
 
 	<section class="slide shout"><div>
 		<h2>Спасибо <br>за внимание</h2>
