@@ -44,7 +44,7 @@
 	<section class="slide"><div>
 		<h2>Однажды в офисе:</h2>
 		<ul>
-			<li class="next">PM: А давай тут поменяем цвет на кнопке на синий? это же быстро?</li>
+			<li class="next">PM: А давай тут поменяем цвет на кнопке на синий. Это же быстро?</li>
 			<li class="next">Dev: Да, тут на полчаса работы</li>
 			<li class="next">Прошло полчаса...</li>
 			<li class="next">PM: Нет, это ужас! А давай ты мне лучше сделай светло синий. И еще зеленый и оранжевый для сравнения!</li>
@@ -95,9 +95,9 @@
 	<section class="slide cover"><div>
 		<h2>Тройка самых популярных</h2>
 		<ul>
-			<li>LESS</li>
-			<li>SASS</li>
-			<li>Stylus</li>
+			<li><b><a href="http://yummynames.com/">LESS</a></b></li>
+			<li><a href="http://sass-lang.com/">SASS</a></li>
+			<li><a href="http://stylus-lang.com/">Stylus</a></li>
 			<img src="pictures/preprocessors.jpg" alt="">
 		</ul>
 		</div></section>
@@ -110,11 +110,11 @@
 	<section class="slide"><div>
 		<h2>Variables</h2>
 		<pre>
-			<code>$my_blue: #4e6cb0 //SASS</code>
-			<code>@my_blue: #4e6cb0 //LESS</code>
-			<code> my_blue: #4e6cb0 //Stylus</code>
+			<code>@my_blue: #4e6cb0; //LESS</code>
+			<code>$my_blue: #4e6cb0; //SASS</code>
+			<code> my_blue: #4e6cb0; //Stylus</code>
 			<code>h1 {</code>
-			<code>	color:@my_blue</code>
+			<code>	color:@my_blue;</code>
 			<code>}</code>
 		</pre>
 		</div></section>
@@ -244,6 +244,7 @@
 	<section class="slide"><div>
 		<h2>Autoprefixer</h2>
 		<ul>
+			<li><a href="https://github.com/postcss/autoprefixer">autoprefixer</a></li>
 			<li>Плагин для PostCSS</li>
 			<li>Всё что он делает это:</li>
 			<li class="next">Добавляет и убирает вендорные префиксы</li>
@@ -281,6 +282,19 @@
 			<code>	transform: scale(0.5);</code>
 			<code>}</code>
 		</pre>
+		</div></section>
+
+	<section class="slide"><div>
+		<h2>Что еще?</h2>
+		<ul>
+			<li><a href="https://github.com/jonathantneal/precss">precss</a></li>
+			<li><a href="https://github.com/cssnext/cssnext">cssnext</a></li>
+			<li><a href="http://cssnano.co/">cssnano</a></li>
+			<li><a href="https://github.com/postcss/postcss-use">postcss-use</a></li>
+			<li><a href="https://www.npmjs.com/package/postcss-bem">postcss-bem</a></li>
+			<li><a href="https://github.com/css-modules/postcss-modules-scope">css modules</a></li>
+			<li class="next">Если вы чего-то не можете сделать - для этого уже есть postCSS плагин</li>
+		</ul>
 		</div></section>
 
 	<p class="badge"><a href="https://github.com/shower/shower">Fork me on Github</a></p>
