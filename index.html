@@ -79,9 +79,9 @@
 	<section class="slide"><div>
 		<h2>Работа с несколькими файлами</h2>
 		<ul>
-			<li>Такая архитектура сложна для сопровождения и поддержки</li>
+			<li>Такая архитектура будет сложна для сопровождения и поддержки</li>
 			<li>@import не настолько хорош и не решает многих проблем</li>
-			<li>Нам нужна сторонний инструмент для канкатенации</li>
+			<li>Нам нужна сторонний инструмент для конкатенации</li>
 			<li class="next">...так может быть этот инструмент пригодятся еще и для чего-то большего?</li>
 			<li class="next">Это именно то, что делают препроцессоры!</li>
 		</ul>
@@ -102,6 +102,11 @@
 		</ul>
 		</div></section>
 
+	<section class="slide cover"><div>
+		<h2 style="text-align: center; font-size:65px; margin-top:-50px;">Как работают препроцессоры?</h2> 
+		<img src="pictures/preprocessor-wide.png" alt="">
+		</div></section>
+
 	<section class="slide"><div>
 		<h2>Variables</h2>
 		<pre>
@@ -115,7 +120,7 @@
 		</div></section>
 
 	<section class="slide"><div>
-		<h2>Variables not just for colors</h2>
+		<h2>Variables не только для цветовых переменных</h2>
 		<pre>
 			<code>@fonts: helvetica, Arial, sans-serif;</code>
 			<code>@images_path: "../img";</code>
@@ -125,7 +130,7 @@
 		</div></section>
 
 	<section class="slide"><div>
-		<h2>Operations and color functions</h2>
+		<h2>Операции и цветовые функции</h2>
 		<pre>
 			<code>width: 25px * 4 + 100px / 2 - 50px; //= 100px</code>
 			<code>color: #990033 + #666666; //= #FF6699</code>
@@ -136,7 +141,7 @@
 
 	<section class="slide"><div>
 		<h2>Mixins</h2>
-		<span>Functions returns value, minxins - CSS </span>
+		<span>Функции возвращают значение, миксины - CSS </span>
 		<pre>
 			<code>.border-radius(@radius) {</code>
 			<code>  -webkit-border-radius: @radius;</code>
@@ -148,7 +153,7 @@
 		</div></section>
 
 	<section class="slide"><div>
-		<h2>Nesting</h2>
+		<h2>Наследование</h2>
 		<pre>
 			<code>.pop {</code>
 			<code>	.pop-btn {</code>
@@ -161,7 +166,7 @@
 		</div></section>
 
 	<section class="slide"><div>
-		<h2>Nesting</h2>
+		<h2>Наследование</h2>
 		<pre>
 			<code>.link {</code>
 			<code>	&amp;:hover {</code>
@@ -174,66 +179,108 @@
 		</div></section>
 
 	<section class="slide"><div>
-		<h2>import and minification</h2>
-		<p>now works with no performance leak</p>
+		<h2>Импорты и минификация</h2>
+		<p>Теперь без потери производительности</p>
 		<pre>
 			<code>@import "library"; // library.less</code>
 			<code>@import "typo.css";</code>
 		</pre>
 		</div></section>
 
-	<section class="slide shout"><div>
-		<h2>Miscommunications</h2>
+	<section class="slide cover"><div>
+		<h2 style="text-align: center; font-size:65px; margin-top:-50px;">Недопонимание</h2>
+		<img src="pictures/star-wars-vs-toast.jpg" alt="">
 		</div></section>
 
 	<section class="slide"><div>
-		<h2>i need RUBY or Node on backend</h2>
+		<h2>Нам будет нужен Ruby или Node на бэкэнде</h2>
 		<ul>
-			<li>Sass is written in ruby</li>
-			<li>LESS is written in javascript</li>
-			<li class="next">This does NOT required Ruby or Node on your prod env</li>
-			<li class="next">You need them on you development machine</li>
+			<li>Sass написан на Ruby</li>
+			<li>LESS написан на Javascript</li>
+			<li class="next">Всё это НЕ ЗАСТАВЛЯЕТ нас ставить Ruby или Node на прод</li>
+			<li class="next">Это необходимо нам только на дев машине</li>
 		</ul>
 		</div></section>
 
 	<section class="slide"><div>
-		<h2>LESS runs client-side</h2>
+		<h2>LESS работает на клиенте</h2>
 		<ul>
-			<li>LESS can run client-side</li>
-			<li>OK for testing and if you can't access dev env</li>
-			<li class="next">NEVER EVER use it in prod. it's even worce than @import performance</li>
-			<li class="next">Use Node. of Rhino</li>
+			<li>LESS может запускаться client-side</li>
+			<li>Это OK для тестинга или если мы не можем залезть на дев машину</li>
+			<li class="next">НИКОГДА не используйте на проде. Это даже хуже. чем @import</li>
+			<li class="next">Используйте Node. Или Rhino</li>
 		</ul>
 		</div></section>
 
 	<section class="slide"><div>
-		<h2>IT's hard to install</h2>
+		<h2>Препроцессоры сложно установить</h2>
 		<ul>
-			<li>Both ruby and Node are easy to install on any platform</li>
-			<li class="next">Mac: Ruby from the box, Node.pkg</li>
+			<li>И Ruby и Node легко поставить на все платформы</li>
+			<li class="next">Mac: Ruby из коробки, Node.pkg</li>
 			<li class="next">Windows: RubyInstaller.exe, Node.exe</li>
-			<li class="next">unix: apt-get install ruby/nodejs</li>
+			<li class="next">Unix: apt-get install ruby/nodejs</li>
 		</ul>
 		</div></section>
-		
-	<section class="slide shout"><div>
-		<h2>Even big huys make mistakes</h2>
-		</div></section>
-		
-		
-		
-		
-		
-		
-		
-		
 
-	<section class="slide shout"><div>
-		<h2>Спасибо <br>за внимание</h2>
+	<section class="slide cover"><div>
+		<h2 style="text-align: center; color: #c3bdbd;font-size:65px; margin-top:-70px;">Альтернативы?</h2>
+		<img src="pictures/alternative.jpg" alt="">
 		</div></section>
 
-	<section class="slide shout"><div>
-		<h2>Вопросы?</h2>
+	<section class="slide cover"><div>
+		<h2 style="text-align: center;color: #af0808; font-size:65px; margin-top:-50px;">PostCSS</h2>
+		<img src="pictures/postcss-2.png" alt="">
+		</div></section>
+
+	<section class="slide cover"><div>
+		<h2 style="text-align: center;font-size:65px; margin-top:-50px;">Как работают постпроцессоры?</h2>
+		<img src="pictures/postprocessor-wide.png" alt="">
+		</div></section>
+
+	<section class="slide cover"><div>
+		<img src="pictures/autoprefixer-logo.png" alt="">
+		</div></section>
+
+	<section class="slide"><div>
+		<h2>Autoprefixer</h2>
+		<ul>
+			<li>Плагин для PostCSS</li>
+			<li>Всё что он делает это:</li>
+			<li class="next">Добавляет и убирает вендорные префиксы</li>
+		</ul>
+		</div></section>
+
+	<section class="slide"><div>
+		<h2>Как это работает?</h2>
+		<ul>
+			<li>Вы конфигурируете браузерную матрицу под плагин</li>
+			<li>К примеру 2 последние версии или все > 5%</li>
+			<li>Плагин парсит наш CSS и смотрит в CanIUse</li>
+			<li>И после этого вносит изменения в наш CSS</li>
+		</ul>
+		</div></section>
+
+	<section class="slide"><div>
+		<h2>Autoprefixer</h2>
+		<pre>
+			<code>a {</code>
+			<code>	-webkit-border-radius: 5px;</code>
+			<code>			border-radius: 5px;</code>
+			<code>}</code><br>
+			<code>a { border-radius: 5px; }</code>
+		</pre>
+		</div></section>
+
+	<section class="slide"><div>
+		<h2>Autoprefixer</h2>
+		<pre>
+			<code>a { transform: scale(0.5); }</code><br>
+			<code>a {</code>
+			<code>	-webkit-transform: scale(0.6);</code>
+			<code>	-moz-transform: scale(0.6);</code>
+			<code>	transform: scale(0.5);</code>
+			<code>}</code>
+		</pre>
 		</div></section>
 
 	<p class="badge"><a href="https://github.com/shower/shower">Fork me on Github</a></p>
